@@ -1,0 +1,11 @@
+const mongoose = require('mongoose');
+
+const ResourceSchema = new mongoose.Schema({
+  title:       { type: String, required: true },
+  category:    { type: String, enum: ['scam_awareness', 'basics', 'online_safety'], required: true },
+  videoType:   { type: String, enum: ['youtube', 'direct'], required: true },
+  url:         { type: String, required: true },
+  description: { type: String }
+}, { timestamps: true });
+
+module.exports = mongoose.model('Resource', ResourceSchema);
