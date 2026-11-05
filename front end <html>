@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Literacy Awareness System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Digital Literacy & Scam Awareness</h1>
+    <div id="user-info">
+      <span id="welcome-text"></span>
+      <span id="timer-badge">Daily Usage: 0 / 60 mins</span>
+      <button id="logout-btn" onclick="logout()" style="display:none;">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Screen overlay for when limit is reached -->
+    <div id="limit-modal" class="modal">
+      <div class="modal-content">
+        <h2>Daily Usage Limit Reached!</h2>
+        <p>You have hit your daily cap. Please take a break and return tomorrow to continue learning.</p>
+      </div>
+    </div>
+
+    <!-- Login/Register Form -->
+    <section id="auth-section">
+      <div class="auth-card">
+        <h2>Sign In</h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="login()">Login</button>
+      </div>
+    </section>
+
+    <!-- Content & Video Hub -->
+    <section id="dashboard-section" style="display:none;">
+      <h2>Educational Modules</h2>
+      <div class="filter-controls">
+        <button onclick="filterVideos('all')">All</button>
+        <button onclick="filterVideos('scam_awareness')">Scam Awareness</button>
+        <button onclick="filterVideos('online_safety')">Online Safety</button>
+      </div>
+      <div id="video-container" class="grid-container"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
